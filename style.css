@@ -1,0 +1,13 @@
+:root {
+    --size: 1.4;
+ }
+ .terminal {
+    --color: rgba(0, 200, 0, 0.99);
+    --animation: terminal-glow;
+    --glow: 1;
+}
+@media (prefers-reduced-motion) {
+    :root {
+        --animation: terminal-none;
+    }
+}
