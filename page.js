@@ -1,5 +1,5 @@
 directory = 0;
-$('body').terminal({
+term = $('body').terminal({
     help: function() {
         this.echo('-----------------\nHelp Menu:\n\tcd\n\tls\n\tcat\n\tpwd\n\tman\n\tclear\n-----------------');
     },
@@ -105,6 +105,16 @@ $('body').terminal({
         this.clear();
     }
 }, {
-    greetings: 'Neil Van Eikema Hommes v1.0.0 built-in shell\nuse "help" to see a list of built-in commands.',
-    prompt: 'neil@Hommes:/$ '
+    greetings: 'Neil Van Eikema Hommes v1.0.0 built-in shell',
+    prompt: 'neil@Hommes:/$ ',
+    autocompleteMenu: true,
+    completion: ['CySky', 'leaguescript', 'Student-tower-Defense', 'Cygify', 'ChatTriggers-Weight-Mod', 'Chat-Boi',
+        'introduction', 'about_me', 'projects', 'contact_me'
+    ],
+    typingSpeed: 50,
+});
+
+$(document).ready(function() {
+    term.typing('echo', 20, 'use "help" to see a list of built-in commands.', function() {
+    });
 });
